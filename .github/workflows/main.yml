@@ -1,0 +1,27 @@
+name: Deploy via SCP
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Deploy website files via SCP
+        uses: appleboy/scp-action
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: 22
+          key: ${{ secrets.ACTION_SSH_KEY }}
+          source: "src/*"
+          target: "/var/www/dot.omnicron.xyz/"
