@@ -25,3 +25,4 @@ jobs:
           key: ${{ secrets.ACTION_SSH_KEY }}
           source: "src/*"
           target: "/var/www/dot.omnicron.xyz/"
+          strip_components: 1
