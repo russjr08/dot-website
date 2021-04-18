@@ -15,14 +15,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Deploy website files via SCP
-        uses: appleboy/scp-action@master
+      - name: Deploy website files via SFTP
+        uses: hrsetyono/git-sftp-action@v4
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: 22
+          url: ${{ secrets.HOST }}
+          user: ${{ secrets.USERNAME }}
+          port: 30
           key: ${{ secrets.ACTION_SSH_KEY }}
-          source: "src/*"
-          target: "/var/www/dot.omnicron.xyz/"
-          strip_components: 1
+          syncroot: "src/"
