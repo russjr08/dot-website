@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destiny Objective Tracker | iOS Alpha Signup</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma-prefers-dark" />
+  <link rel="stylesheet" type="text/css" href="base.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log("Navigation ready");
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="./index.html">
+        <img src="http://github.com/russjr08/DOT-Android/raw/master/assets/raid_emblem.png" width="28" height="48" />
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="./index.html">Home</a>
+        <a class="navbar-item" href="./android_alpha.html">DOT Android (Alpha)</a>
+        <a class="navbar-item" href="./ios_alpha.html">DOT iOS (Alpha)</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <section class="section">
+    <div class="container content">
+      <h1 class="title is-1">iOS Alpha Signup</h1>
+      <br />
+      <p class="subtitle">We're still working on getting this page ready!</p>
+      <hr />
+
+      <div class="container content">
+      </div>
+
+      <div class="container content">
+        <h3 class="title">Thank You!</h3>
+        <p class="subtitle"><em>Guardians make their own fate...</em></p>
+        <p>If you are trying out Destiny Objective Tracker, then thank you! I created DOT to help Guardians all over the
+          universe, and your participation is helping me reach that goal!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>&copy; 2019 -
+        <script type="text/javascript">document.write(new Date().getFullYear())</script> &mdash; Russell Richardson
+      </p>
+      <p>Special thanks to the <a href="https://bulma.io/">Bulma</a> team for the CSS framework!</p>
+    </div>
+  </footer>
+</body>
+
+</html>
